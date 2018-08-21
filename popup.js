@@ -1,5 +1,6 @@
 var ans = {};
 let tryButton = document.getElementById('try');
+let player = document.getElementById('audio_player');
 
 ans.createSidebar = function() {
     return {
@@ -53,7 +54,10 @@ function sendTextToPolly(text) {
   .done(function(msg){
     const result = JSON.stringify(msg)
     const sound = JSON.parse(result).polly_sound
-    alert(sound)
+    const srcData = 'data:audio/mp3;base64,' + sound;
+    // alert (srcData)
+    player.setAttribute("src", srcData)
+    // player[0].play()
   });
 }
 
