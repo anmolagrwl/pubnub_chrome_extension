@@ -12,9 +12,9 @@ ans.createSidebar = function() {
                 chrome.tabs.executeScript(null,
                     {},
                     function(){
-                      // sendLinkToLateral(pageurl);
-                      console.log(tabs[0].title)
-                      sendTextToPolly(tabs[0].title) 
+                      sendLinkToLateral(pageurl);
+                      // console.log(tabs[0].title)
+                      // sendTextToPolly(tabs[0].title) 
                     })
               });
             };
@@ -31,7 +31,7 @@ function sendLinkToLateral(pageurl) {
       data: { url: pageurl}
     })
     .done(function(msg){
-      const body = JSON.parse(msg).body
+      const body = JSON.parse(msg).body.replace(/[\r\n]/g, '');
       console.log(body);
       sendTextToPolly(body)
     });
@@ -59,7 +59,6 @@ function sendTextToPolly(text) {
     const srcData = 'data:audio/mp3;base64,' + sound;
     console.log(srcData)
     player.setAttribute("src", srcData)
-    // player[0].play()
   });
 }
 
