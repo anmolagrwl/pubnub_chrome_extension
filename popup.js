@@ -1,12 +1,13 @@
 var ans = {};
-let tryButton = document.getElementById('try');
+let readButton = document.getElementById('read_aloud');
 let player = document.getElementById('audio_player');
+// let person = document.getElementById('audio_player').value;
 
 ans.createSidebar = function() {
     return {
         init: function(){
             chrome.extension.getBackgroundPage();
-            tryButton.onclick = function(element) {
+            readButton.onclick = function(element) {
               chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
                 const pageurl = tabs[0].url
                 chrome.tabs.executeScript(null,
@@ -39,6 +40,7 @@ function sendLinkToLateral(pageurl) {
 }
 
 function sendTextToPolly(text) {
+  let person = $('input[name=person]:checked').val()
   $.ajax({
     method: "POST",
     url: "https://pubsub.pubnub.com/v1/blocks/sub-key/sub-c-8244f27a-94f2-11e8-873f-86cf78041310/aws-polly",
@@ -46,7 +48,7 @@ function sendTextToPolly(text) {
       "data": {
         "text": text,
         "polly": {
-          "voice": "Joanna",
+          "voice": person,
           "format": "mp3",
           "location": "text"
         }
