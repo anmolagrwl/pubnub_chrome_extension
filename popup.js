@@ -1,9 +1,8 @@
-var ans = {};
+var ext = {};
 let readButton = document.getElementById('read_aloud');
 let player = document.getElementById('audio_player');
-// let person = document.getElementById('audio_player').value;
 
-ans.createSidebar = function() {
+ext.createSidebar = function() {
     return {
         init: function(){
             chrome.extension.getBackgroundPage();
@@ -14,8 +13,6 @@ ans.createSidebar = function() {
                     {},
                     function(){
                       sendLinkToLateral(pageurl);
-                      // console.log(tabs[0].title)
-                      // sendTextToPolly(tabs[0].title) 
                     })
               });
             };
@@ -65,4 +62,4 @@ function sendTextToPolly(text) {
 }
 
 
-ans.createSidebar.init();
+ext.createSidebar.init();
