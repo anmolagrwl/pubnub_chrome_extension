@@ -13,7 +13,13 @@ In this tutorial, we are creating your personal news reporter which will read ou
 - [Amazon Polly](https://aws.amazon.com/polly/), which is available in PubNub BLOCKS catalog.
 - [LateralIO Article extractor API](https://lateral.io/docs/article-extractor), for which we will create a PubNub function from scratch that will extract text from the website.
 
-[Article reader chrome extension GIF demo](https://github.com/anmolonruby/pubnub_chrome_extension/blob/master/extension.gif "")
+### Flow Diagram:
+
+![Demo flow diagram](https://github.com/anmolonruby/pubnub_chrome_extension/blob/master/flow%20diagram.png?raw=true)
+
+### Demo:
+
+![Article reader chrome extension GIF demo](https://github.com/anmolonruby/pubnub_chrome_extension/blob/master/extension.gif?raw=true)
 
 
 ### Getting started:
