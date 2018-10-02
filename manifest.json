@@ -1,7 +1,7 @@
 {
-  "name": "News Reader",
+  "name": "Article Reader",
   "version": "1.0",
-  "description": "News Reader powererd by PubNub and AWS Polly",
+  "description": "Article Reader powererd by PubNub and AWS Polly",
   "permissions": ["storage", "tabs", "activeTab"],
   "background": {
     "scripts": ["background.js"],
